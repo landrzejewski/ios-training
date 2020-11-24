@@ -12,7 +12,7 @@ struct Description: Codable {
     let text: String
     let icon: String
     
-    enum CondinKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         
         case text = "description"
         case icon
