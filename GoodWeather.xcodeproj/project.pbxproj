@@ -15,6 +15,12 @@
 		80BA8EF0256D0C8300DA38B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80BA8EEE256D0C8300DA38B9 /* LaunchScreen.storyboard */; };
 		80BA8EFB256D0C8400DA38B9 /* GoodWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BA8EFA256D0C8400DA38B9 /* GoodWeatherTests.swift */; };
 		80BA8F06256D0C8400DA38B9 /* GoodWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BA8F05256D0C8400DA38B9 /* GoodWeatherUITests.swift */; };
+		80BA8F25256D249B00DA38B9 /* FakeWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BA8F24256D249B00DA38B9 /* FakeWeatherService.swift */; };
+		80BA8F2D256D258D00DA38B9 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BA8F2C256D258D00DA38B9 /* City.swift */; };
+		80BA8F32256D261600DA38B9 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BA8F31256D261600DA38B9 /* Description.swift */; };
+		80BA8F37256D276B00DA38B9 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BA8F36256D276B00DA38B9 /* Temperature.swift */; };
+		80BA8F3C256D27AC00DA38B9 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BA8F3B256D27AC00DA38B9 /* Forecast.swift */; };
+		80BA8F41256D28A300DA38B9 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BA8F40256D28A300DA38B9 /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		80BA8F01256D0C8400DA38B9 /* GoodWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BA8F05256D0C8400DA38B9 /* GoodWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodWeatherUITests.swift; sourceTree = "<group>"; };
 		80BA8F07256D0C8400DA38B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80BA8F24256D249B00DA38B9 /* FakeWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeWeatherService.swift; sourceTree = "<group>"; };
+		80BA8F2C256D258D00DA38B9 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		80BA8F31256D261600DA38B9 /* Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
+		80BA8F36256D276B00DA38B9 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
+		80BA8F3B256D27AC00DA38B9 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		80BA8F40256D28A300DA38B9 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,7 @@
 		80BA8EE2256D0C8100DA38B9 /* GoodWeather */ = {
 			isa = PBXGroup;
 			children = (
+				80BA8F23256D246F00DA38B9 /* Model */,
 				80BA8EE3256D0C8100DA38B9 /* AppDelegate.swift */,
 				80BA8EE5256D0C8100DA38B9 /* SceneDelegate.swift */,
 				80BA8EE7256D0C8100DA38B9 /* ViewController.swift */,
@@ -126,6 +139,19 @@
 				80BA8F07256D0C8400DA38B9 /* Info.plist */,
 			);
 			path = GoodWeatherUITests;
+			sourceTree = "<group>";
+		};
+		80BA8F23256D246F00DA38B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				80BA8F24256D249B00DA38B9 /* FakeWeatherService.swift */,
+				80BA8F2C256D258D00DA38B9 /* City.swift */,
+				80BA8F31256D261600DA38B9 /* Description.swift */,
+				80BA8F36256D276B00DA38B9 /* Temperature.swift */,
+				80BA8F3B256D27AC00DA38B9 /* Forecast.swift */,
+				80BA8F40256D28A300DA38B9 /* Weather.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +284,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80BA8F3C256D27AC00DA38B9 /* Forecast.swift in Sources */,
+				80BA8F32256D261600DA38B9 /* Description.swift in Sources */,
 				80BA8EE8256D0C8100DA38B9 /* ViewController.swift in Sources */,
+				80BA8F2D256D258D00DA38B9 /* City.swift in Sources */,
+				80BA8F41256D28A300DA38B9 /* Weather.swift in Sources */,
 				80BA8EE4256D0C8100DA38B9 /* AppDelegate.swift in Sources */,
 				80BA8EE6256D0C8100DA38B9 /* SceneDelegate.swift in Sources */,
+				80BA8F37256D276B00DA38B9 /* Temperature.swift in Sources */,
+				80BA8F25256D249B00DA38B9 /* FakeWeatherService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +471,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34A9J24W7Y;
 				INFOPLIST_FILE = GoodWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,6 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34A9J24W7Y;
 				INFOPLIST_FILE = GoodWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

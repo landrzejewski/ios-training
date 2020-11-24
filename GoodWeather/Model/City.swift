@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  City.swift
 //  GoodWeather
 //
 //  Created by Łukasz Andrzejewski on 24/11/2020.
 //
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController {
+struct City: Codable {
 
+    let name: String
     
 }
-
