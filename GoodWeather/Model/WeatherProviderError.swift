@@ -10,8 +10,8 @@ import Foundation
 enum WeatherProviderError: Error {
    
     case invalidData
-    case parseFailed
-    case maleformedUrl
+    case parsingFailed
+    case malformedUrl
     case requestFailed
         
 }

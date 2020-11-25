@@ -9,6 +9,7 @@ import Foundation
 
 struct ForecastViewModel {
     
+    let title: String
     let icon: String
     let description: String
     let temperature: String
@@ -16,7 +17,16 @@ struct ForecastViewModel {
     
     private let iconMapper = IconMapper()
     
-    init(forecast: Forecast) {
+    init() {
+        title = "Good Weather"
+        icon = ""
+        description = "No data"
+        temperature = ""
+        pressure = ""
+    }
+    
+    init(city: String, forecast: Forecast) {
+        title = city
         if let forecastDescription = forecast.description.first {
             icon = iconMapper.map(icon: forecastDescription.icon)
             description = forecastDescription.text

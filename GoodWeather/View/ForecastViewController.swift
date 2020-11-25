@@ -16,16 +16,24 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var cityTextField: UITextField!
     
     private let weatherService: WeatherService = URLSessionWeatherService()
+    private let cityKey = "cityName"
+    
+    private var weather: Weather?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        refreshWeather(for: "warsaw")
+        updateView(viewModel: ForecastViewModel())
+        if let cityName = UserDefaults.standard.string(forKey: cityKey) {
+            refreshWeather(for: cityName)
+        }
     }
     
     private func onWeatherLoaded(result: Result<Weather, WeatherProviderError>) {
         switch result {
         case .success(let weather):
-            let forecast = ForecastViewModel(forecast: weather.forecast[0])
+            self.weather = weather
+            UserDefaults.standard.set(weather.city.name, forKey: cityKey)
+            let forecast = ForecastViewModel(city: weather.city.name, forecast: weather.forecast[0])
             updateView(viewModel: forecast)
         case .failure(let error):
             print(error)
@@ -33,6 +41,7 @@ class ForecastViewController: UIViewController {
     }
     
     private func updateView(viewModel: ForecastViewModel) {
+        title = viewModel.title
         iconLabel.text = viewModel.icon
         descriptionLabel.text = viewModel.description
         temperatureLabel.text = viewModel.temperature
@@ -47,6 +56,14 @@ class ForecastViewController: UIViewController {
     
     private func refreshWeather(for city: String) {
         weatherService.getWeather(for: city, callback: onWeatherLoaded)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetails" {
+            if let forecastDetailsViewController = segue.destination as? ForecastDetailsViewController {
+                forecastDetailsViewController.weather = weather
+            }
+        }
     }
     
 }

@@ -13,19 +13,19 @@ final class URLSessionWeatherService: WeatherService {
    
     func getWeather(for city: String, callback: @escaping (Result<Weather, WeatherProviderError>) -> ()) {
         guard let requestUrl = URL(string: "\(url)\(city)") else {
-            callback(.failure(.maleformedUrl))
+            callback(.failure(.malformedUrl))
             return
         }
         let request = URLRequest(url: requestUrl)
-        URLSession.shared.dataTask(with: request) { jsonData, response, error in
-            guard let data = jsonData else {
+        URLSession.shared.dataTask(with: request) { json, response, error in
+            guard let data = json else {
                 DispatchQueue.main.async { callback(.failure(.requestFailed)) }
                 return
             }
             if let weather = try? JSONDecoder().decode(Weather.self, from: data) {
                 DispatchQueue.main.async { callback(.success(weather)) }
             } else {
-                DispatchQueue.main.async { callback(.failure(.parseFailed)) }
+                DispatchQueue.main.async { callback(.failure(.parsingFailed)) }
             }
         }.resume()
     }
