@@ -17,9 +17,9 @@ class ForecastDetailsViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "forecastCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "forecastCell") as! ForecastDetailsViewCell
         let forecast = weather?.forecast[indexPath.row]
-       // cell.textLabel?.text = forecast?.description.first?.text ?? ""
+        cell.updateView(viewModel: ForecastViewModel(city: weather?.city.name ?? "", forecast: forecast!))
         return cell
     }
     

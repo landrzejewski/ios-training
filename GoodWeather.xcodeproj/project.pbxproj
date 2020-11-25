@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8059FCD2256E5D72006EAA1A /* ForecastDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8059FCD1256E5D72006EAA1A /* ForecastDetailsViewController.swift */; };
-		8059FCDA256E6F55006EAA1A /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8059FCD9256E6F55006EAA1A /* ForecastTableViewCell.swift */; };
+		80658ACA256E7FCB00E42B7C /* ForecastDetailsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80658AC9256E7FCB00E42B7C /* ForecastDetailsViewCell.swift */; };
 		806B8D62256D56650035F2A9 /* weather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 806B8D61256D56650035F2A9 /* weather.ttf */; };
 		80BA8EE4256D0C8100DA38B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BA8EE3256D0C8100DA38B9 /* AppDelegate.swift */; };
 		80BA8EE6256D0C8100DA38B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BA8EE5256D0C8100DA38B9 /* SceneDelegate.swift */; };
@@ -50,7 +50,7 @@
 
 /* Begin PBXFileReference section */
 		8059FCD1256E5D72006EAA1A /* ForecastDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDetailsViewController.swift; sourceTree = "<group>"; };
-		8059FCD9256E6F55006EAA1A /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		80658AC9256E7FCB00E42B7C /* ForecastDetailsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDetailsViewCell.swift; sourceTree = "<group>"; };
 		806B8D61256D56650035F2A9 /* weather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = weather.ttf; sourceTree = "<group>"; };
 		80BA8EE0256D0C8100DA38B9 /* GoodWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BA8EE3256D0C8100DA38B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -177,9 +177,9 @@
 				80BA8F66256D456700DA38B9 /* ForecastViewModel.swift */,
 				80BA8EE7256D0C8100DA38B9 /* ForecastViewController.swift */,
 				8059FCD1256E5D72006EAA1A /* ForecastDetailsViewController.swift */,
+				80658AC9256E7FCB00E42B7C /* ForecastDetailsViewCell.swift */,
 				80BA8EE9256D0C8100DA38B9 /* Main.storyboard */,
 				80BA8EEE256D0C8300DA38B9 /* LaunchScreen.storyboard */,
-				8059FCD9256E6F55006EAA1A /* ForecastTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -325,7 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8059FCDA256E6F55006EAA1A /* ForecastTableViewCell.swift in Sources */,
+				80658ACA256E7FCB00E42B7C /* ForecastDetailsViewCell.swift in Sources */,
 				80BA8F3C256D27AC00DA38B9 /* Forecast.swift in Sources */,
 				80BA8F32256D261600DA38B9 /* Description.swift in Sources */,
 				80EF7037256D588A00C2200D /* IconMapper.swift in Sources */,
