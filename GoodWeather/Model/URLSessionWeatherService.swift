@@ -11,7 +11,7 @@ final class URLSessionWeatherService: WeatherService {
     
     private let url = "https://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&units=metric&APPID=b933866e6489f58987b2898c89f542b8&q="
    
-    func getWeather(for city: String, callback: @escaping (Result<Weather, WeatherProviderError>) -> ()) {
+    func getWeather(for city: String, callback: @escaping (Result<Weather, HttpClientError>) -> ()) {
         guard let requestUrl = URL(string: "\(url)\(city)") else {
             callback(.failure(.malformedUrl))
             return

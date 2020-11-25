@@ -9,6 +9,6 @@ import Foundation
 
 protocol WeatherService {
     
-    func getWeather(for city: String, callback: @escaping (Result<Weather, WeatherProviderError>) -> ())
+    func getWeather(for city: String, callback: @escaping (Result<Weather, HttpClientError>) -> ())
     
 }
