@@ -31,9 +31,7 @@ final class HttpClient {
     private func createRequest(for url: URL, method: HttpMethod) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = method.name
-        switch method {
-        case .get: ()
-        case .post(let body):
+        if case .post(let body) = method {
             request.httpBody = try! encoder.encode(body)
         }
         return request
@@ -41,11 +39,11 @@ final class HttpClient {
     
     private func execute<R: Decodable>(request: URLRequest, completionHandler: @escaping (Result<R, HttpClientError>) -> ()) {
         URLSession.shared.dataTask(with: request) { [self] json, response, error in
-            guard let data = json else {
+            guard error == nil else {
                 completionHandler(.failure(.requestFailed))
                 return
             }
-            if let result = try? decoder.decode(R.self, from: data) {
+            if let data = json, let result = try? decoder.decode(R.self, from: data) {
                 completionHandler(.success(result))
             } else {
                 completionHandler(.failure(.parsingFailed))
