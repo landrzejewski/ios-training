@@ -15,7 +15,7 @@ class ForecastViewController: UIViewController, ForecastView {
     @IBOutlet weak var pressureLabel: UILabel!
     @IBOutlet weak var cityTextField: UITextField!
     
-    private let viewModel = ForecastViewModel(weatherService: HttpClientWeatherService())
+    private let viewModel = ForecastViewModel(weatherService: URLSessionWeatherService())
     
     override func viewDidLoad() {
         super.viewDidLoad()
