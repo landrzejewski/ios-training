@@ -10,16 +10,15 @@ import UIKit
 
 class ForecastDetailsViewController: UIViewController, UITableViewDataSource {
     
-    var weather: Weather?
+    var viewModel: ForecastViewModel!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return weather?.forecast.count ?? 0
+        return viewModel.entries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "forecastCell") as! ForecastDetailsViewCell
-        let forecast = weather?.forecast[indexPath.row]
-        cell.updateView(viewModel: ForecastViewModel(city: weather?.city.name ?? "", forecast: forecast!))
+        cell.updateView(viewModel: viewModel.entries[indexPath.row])
         return cell
     }
     
